@@ -1,0 +1,16 @@
+<?php
+
+//Variable name $name
+# Assignment Operator =
+// Expression "Mg Mg"
+//Statement $name = "Mg Mg"
+$name = "Mg Mg";
+
+/* 
+$name => 1 token
+= => 2 token
+"Mg Mg" => 3 token
+*/
+
+?>
+
