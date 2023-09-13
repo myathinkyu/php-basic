@@ -19,11 +19,12 @@ PHP is the most widely used open source and general purpose server side scriptin
 </p>';
 $message .= '<p style="text-indent: 45px;font-family: Cambria;font-size: 18px;color: #999;float: right;clear: both;">Your Sincerely!</p>';
 $message .= '<p style="text-indent: 45px;font-family: Cambria;font-size: 18px;color: #999;float: right;clear: both">myathinkyu</p>';
+$message.= '<img src="c:\Users\ASUS\Downloads\girl.png">';
 
-
-$header = "From: PKT@gmail.com ";
-mail($to,$subject,$message,$header);
-
+$header = "From: PKT@gmail.com\r\n";
+$header .= "Content-Type:text/html" ;
+$bol = mail($to,$subject,$message,$header);
+echo $bol ? "Message Successfully Sent!" : "Message Sending Fail!";
 
 
 ?>
