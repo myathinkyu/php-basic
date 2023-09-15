@@ -1,7 +1,19 @@
 <?php
-
+require_once "sysgern/db_Hacker.php";
 function registerUser($username,$email,$password){
+    if(usernameCheck($username) AND emailCheck($email) && passwordCheck($password)){
+        return insertUser($username,$email,$password);
+    }else{
+        return "Fail";
+    }
+}
 
+function loginUser($email,$password){
+    if(emailCheck($email) && passwordCheck(($password))){
+        return userLogin($email,$password);
+    }else{
+        return "Auth Fail";
+    }
 }
 
 
@@ -35,6 +47,6 @@ function passwordCheck($password){
         return false;
     }
 }
-$bol = passwordCheck("asedR12@");
-echo $bol ? "TRUE" : "FALSE";
+// $bol = passwordCheck("asedR12@");
+// echo $bol ? "TRUE" : "FALSE";
 ?>

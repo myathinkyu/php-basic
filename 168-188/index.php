@@ -1,7 +1,9 @@
 <?php 
+
 include_once "views/top.php";
 include_once "views/nav.php";
 include_once "views/header.php";
+include_once "sysgern/postGenerator.php";
 ?>
 
 <div class="container" my-3>
@@ -9,21 +11,29 @@ include_once "views/header.php";
     <?php include_once "views/sidebar.php"?>
     <section class="col-md-9">
       <div class="row">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-block">
-              <h5>Card title</h5>
-              <p>Some quick example text to build on the card title and make up the bulk of 
-              the card's content.A card is a flexible and extensible content container.
-              </p>
-            <a href="#" class="btn btn-info btn-sm float-right">Detail</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</div>
+        <?php
+        $result = "";
+          if(checkSession(("username"))){
+            $result = getAllPost(2);
+          }else{
+            $result = getAllPost(1);
+          }
+
+          foreach($result as $post){
+            $pid = $post["id"];
+            echo '<div class="col-md-6">
+            <div class="card mb-3">
+              <div class="card-block m-3">
+                <h5> '.$post["title"].' </h5>
+                <p> '.substr($post["content"],0,100).'</p>
+                <a href="postDetail.php? pid='.$pid.' " class="btn btn-info btn-sm float-right">Detail</a>
+              </div>
+             </div>
+            </div>';
+          }
+        ?>
+                
+
 
 <?php 
 include_once "views/footer.php";

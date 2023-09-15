@@ -9,6 +9,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
+      </li>
       <li class="nav-item">
         <a class="nav-link text-white english" href="#">News</a>
       </li>
@@ -23,12 +24,25 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-white english" href="#" id="myDD" role="button" data-toggle="dropdown">
-          Member
+        <?php
+        if (checkSession("username")){
+          echo getSession("username");
+        }else {
+          echo "Member";
+        }
+      ?>
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="register.php">Register</a>
-          <a class="dropdown-item" href="login.php">Login</a>
-          <a class="dropdown-item" href="#">Logout</a>
+        <?php
+        if (checkSession("username")){
+          echo "<a class='dropdown-item' href='logout.php'>Logout</a>";
+        } else {
+          echo "<a class='dropdown-item' href='register.php'>Register</a>";
+          echo "<a class='dropdown-item' href='login.php'>Login</a>";
+        }
+      ?>
+          
+
         </div>
       </li>
     </ul>

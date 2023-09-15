@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once "sysgern/my_Session.php"; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
