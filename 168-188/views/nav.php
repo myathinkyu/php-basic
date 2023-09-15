@@ -11,16 +11,19 @@
     <ul class="navbar-nav ml-auto">
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white english" href="#">News</a>
+        <a class="nav-link text-white english" href="index.php">News</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white english" href="#">Politic</a>
+        <a class="nav-link text-white english" href="filterPost.php?sid=1">Politic</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white english" href="#">Wars</a>
+        <a class="nav-link text-white english" href="filterPost.php?sid=2">Wars</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white english" href="#">IT News</a>
+        <a class="nav-link text-white english" href="filterPost.php?sid=3">IT News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white english" href="filterPost.php?sid=4">Social</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-white english" href="#" id="myDD" role="button" data-toggle="dropdown">

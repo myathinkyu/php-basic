@@ -1,7 +1,7 @@
 <?php 
 
 include_once "views/top.php";
-include_once "views/header.php";
+
 ?>
 
 <div class="container" my-3>
@@ -12,9 +12,9 @@ include_once "views/header.php";
         <?php
         $result = "";
           if(checkSession(("username"))){
-            $result = getAllPost(2);
+            $result = getFilterPost($_GET["sid"],2);
           }else{
-            $result = getAllPost(1);
+            $result = getFilterPost($_GET["sid"],1);
           }
 
           foreach($result as $post){
@@ -46,3 +46,4 @@ include_once "views/base.php";
 
 </body>
 </html>
+
